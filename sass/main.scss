@@ -1,0 +1,449 @@
+@import "base";
+@import "components";
+@import "fonts";
+@import "layouts";
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+html {
+    line-height: 1.5;
+    tab-size: 4;
+    font-family: jakarta;
+    font-feature-settings: normal;
+}
+body {
+    margin: 0;
+    line-height: inherit;
+    background-color: $background-color;
+}
+.rotate{
+    rotate: 180deg;
+}
+// header
+.header{
+    height: 124px;
+    width: 100%;
+    background-color: $white-color;
+    margin-bottom: 32px ;
+    display: flex;
+    .left-head{
+        @include flex-start;
+        width: 60%;
+        height: inherit;
+        .logo{
+            font-weight: 700;
+            color: $primary-color;
+            font-size: 32px;
+            padding-left: 60px;
+        }
+        .search-box{
+            margin-left: 64px;
+            border: 1px solid rgba(29, 29, 31, 0.4);
+            border-radius: 70px;
+            background-color: $white-color;
+            width: 492px;
+            .search-form{
+                @include flex-start;
+                padding: 10px 0px;
+                .input{
+                    border: none;
+                    margin-left: 23px;
+                    width: 90%;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color:$icon-color ;
+                    outline: none;
+                }
+                .search-icon{
+                    margin-left: 22px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                .filter-icon{
+                    margin-right: 20px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .right-head{
+        @include flex-end;
+        padding-right: 30px;
+        width: 40%;
+        .rounded-full{
+            @include flex-center;
+            width:44px ;
+            margin-right: 20px;
+            height:44px ;
+            border: 1px solid rgba(195, 212, 233, 0.4);
+            border-radius: 50px;
+            position: relative;
+            &:hover {
+                cursor: pointer;
+                scale: 1.3;
+            }
+            .dot{
+                height: 10px;
+                width: 10px;
+                border-radius: 50px;
+                background-color: #FF4423;
+                position: absolute;
+                left: 30px;
+                top: -2px;
+            }
+            .img{
+                width:44px ;
+                height:44px ;
+                border-radius: 50px;
+            }
+        }
+    }
+}
+// end header
+
+// info card
+.container{
+    @include flex-center;
+    gap: 32px;
+    margin-bottom: 42px;
+    .right-sec{
+        width: 640px;
+        height:360px ;
+        margin-right: 64px;
+        border-radius: 10px;
+        background-image: url("../images/car/wave2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        .title {
+                width: 272px;
+                height: 96px;
+                font-size: 31px;
+                font-weight: 600;
+                line-height: 48px;
+                color: $white-color;
+                margin: 24px 24px 16px;
+            }
+            .text {
+                width: 284px;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                color: $white-color;
+                margin: 0px 24px 20px;
+            }
+            .btn-left {
+                @include button($information-color, 44px, 120px);
+                border-radius: 4px;
+                margin: 0 24px 20px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            .car-image {
+                background-image: url("../images/car/blue-car.png");
+                width: 406px;
+                height: 140px;
+                background-size: cover;
+                margin: -60px 0 0 145px;
+                ;
+            }
+    }
+    .left-sec{
+        width: 640px;
+        height: 360px;
+        margin-left: 64px;
+        border-radius: 10px;
+        background-image: url("../images/car/wave1.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        .title{
+            width: 272px;
+            height: 96px;
+            font-size: 31px;
+            font-weight: 600;
+            line-height: 48px;
+            color: $white-color;
+            margin: 24px 24px 16px;
+        }
+        .text{
+            width: 284px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            color: $white-color;
+            margin: 0px 24px 20px;
+        }
+        .btn-left{
+            @include button($primary-color,44px,120px);
+            border-radius: 4px;
+            margin:0 24px 20px;
+            &:hover {
+                cursor: pointer;
+                opacity: 0.9;
+            }
+        }
+        .car-image{
+            background-image: url("../images/car/car-wallpaper.png");
+            width: 406px;
+            height: 116px;
+            background-size: cover;
+            margin: -45px 0 0 145px;
+        }
+    }
+}
+// end info card
+
+//car section
+.container-fluid{
+    width: fit-content;
+    margin: auto;
+    padding: 0px 64px;
+    .selection {
+            @include flex-center;
+            gap: 32px;
+            margin-bottom: 42px;
+            .select-box {
+                @include flex-start;
+                width: 582px;
+                height: 136px;
+                border-radius: 10px;
+                padding: 26px 0px 5px;
+                background-color: $white-color;
+                .padding {
+                    padding: 26px 20px 50px 24px;
+                }
+                .select-container {
+                    .radio {
+                        width: 16px;
+                        height: 16px;
+                        margin-left: -5px;
+                    }
+                    .radio-text {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: $head-color;
+                        margin-left: 8px;
+                    }
+                    .select-title {
+                        margin: 16px 0px 8px;
+                        color: $head-color;
+                        font-weight: 700;
+                        font-size: 16px;
+                    }
+                    label:hover {
+                        cursor: pointer;
+                    }
+                    select {
+                        cursor: pointer;
+                    }
+                    .select-section {
+                        width: 175px;
+                        border-right: 1px solid rgba(195, 212, 233, 0.4);
+                    }
+                    .chevron-title {
+                        margin-bottom: 28px;
+                        margin-right: 10px;
+                        color: $secondary-bg-color;
+                        font-size: 12px;
+                    }
+                    .chevron {
+                        border: none;
+                        color: $head-color;
+                    }
+                    .pad-left {
+                        padding-left: 20px;
+                        padding-right: 30px;
+                    }
+                }
+            }
+            .btn-change {
+                @include button($primary-color, 60px, 60px);
+                border-radius: 10px;
+                &:hover{
+                    cursor: pointer;
+                    opacity: 0.9;
+                }
+            }
+        }
+        .populate-cars{
+            display: block;
+            @include flex-space-between;
+            margin-bottom: 30px;
+            .pop-head{
+                font-size: 16px;
+                font-weight: 600;
+                color: $secondary-bg-color;
+            }
+            .pop-link{
+                font-size: 16px;
+                font-weight: 600;
+                color: $primary-color;
+                text-decoration: none;
+            }
+        }
+        .pop-grid{
+            @include grid-4-col;
+            .cars{
+                width: 304px;
+                height: fit-content;
+                background-color: $white-color;
+                border-radius: 10px;
+                margin-bottom: 42px;
+                .cart-head{
+                    svg:hover{
+                        opacity: 0.7;
+                    }
+                    @include flex-space-between;
+                    padding:24px 26px 0px 24px;
+                    .cart-title{
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                    .heart-color{
+                        color: #ED3F3F;
+                    }
+                }
+                .des-cart {
+                    padding-left: 24px;
+                    color: $secondary-bg-color;
+                    font-size: 14px;
+                    margin-bottom: 64px;
+                }
+                .img-car{
+                    width: 232px;
+                    height: 80px;
+                    margin:auto ;
+                    background-image: url("../images/car/red-car.png");
+                    background-size: cover;
+                    margin-bottom: 40px;
+                    .shadow{
+                        width: inherit;
+                        height: 68px;
+                        background-image:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+                        position: relative;
+                        top: 40px;
+                        margin-top: 64px;
+                    }
+                }
+                .info-cart{
+                    @include flex-space-around;
+                    padding-left: 24px;
+                    padding-right: 24px;
+                    margin-bottom: 36px;
+                    .flex-icon{
+                        display: flex;
+                        gap: 5px;
+                    }
+                    .icon-des{
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: $secondary-bg-color;
+                    }
+                }
+                .footer-card{
+                    @include flex-space-between;
+                    padding-left: 24px;
+                    padding-right: 24px;
+                    padding-bottom: 24px;
+                    .order-btn{
+                        @include button($primary-color,44px,116px);
+                        border-radius: 4px;
+                        font-size: 14px;
+                        &:hover{
+                            opacity: 0.9;
+                            cursor: pointer;
+                        }
+                    }
+                    .price{
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: $head-color;
+                    }
+                    .time{
+                        font-size: 14px;
+                        color: $secondary-bg-color;
+                    }
+                }
+            }
+        }
+    .expand-cars{
+        margin: 44px auto;
+        @include flex-space-between;
+        .expand-btn{
+            @include button($primary-color,44px,156px);
+            border-radius:4px;
+            margin: auto;
+            &:hover{
+                opacity: 0.9;
+                cursor: pointer;
+            }
+        }
+        .car-num{
+            font-size: 14px;
+            color: $secondary-bg-color;
+        }
+    }
+}
+//end car section
+
+//footer
+.foot{
+    width: 100%;
+    background-color: $white-color;
+    padding:60px 60px 25px 60px;
+    @include flex-space-between-footer;
+    flex-wrap: wrap;
+    .left-foot{
+        .foot-head{
+            color: $primary-color;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px
+        }
+        .foot-des{
+            width: 292px;
+            color: $foot-color
+        }
+    }
+    .right-foot{
+        @include flex-end;
+        .group{
+            p:hover{
+                cursor: pointer;
+            }
+            color: $foot-color;
+            margin-right: 80px;
+            margin-bottom: 30px;
+            .head-group{
+                color:$head-color;
+                margin-bottom: 26px;
+                font-size: 20px;
+            }
+        }
+    }
+    .divider{
+        width: 100%;
+        color: rgba(19, 19, 19, 0.16);
+        margin-bottom: 20px;
+    }
+    .sign{
+        font-size: 16px;
+        color: $head-color;
+    }
+    .rules{
+        p:hover{
+            cursor: pointer
+        }
+        @include flex-end;
+        gap: 60px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+

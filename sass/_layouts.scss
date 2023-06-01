@@ -1,0 +1,58 @@
+@mixin flex-start {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin flex-end {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-space-between-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+@mixin flex-space-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin flex-space-evenly {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@mixin grid-4-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 32px;
+    justify-items: center;
+}
+
+@mixin grid-3-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 32px;
+    justify-items: center;
+}

@@ -1,0 +1,30 @@
+$primary-color: #3563E9;
+$secondary-bg-color: #90A3BF;
+$icon-color: #596780;
+$information-color: #54A6FF;
+$head-color: #1A202C;
+$foot-color: rgba(19, 19, 19, 0.6);
+$hr-color: rgba(19, 19, 19, 0.16) ;
+$background-color: #F6F7F9;
+$white-color: #FFF;
+
+.mr-4{
+    margin-right: 16px;
+}
+
+.mr-6{
+    margin-right: 44px;
+}
+
+.text-end{
+    text-align: end;
+}
+
+.light-font{
+    font-weight: 400;
+    color:$secondary-bg-color ;
+}
+
+.bg-text-700{
+    color: $icon-color;
+}

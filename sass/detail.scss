@@ -1,0 +1,242 @@
+@import "base";
+@import "layouts";
+@import "components";
+
+.container-fluid{
+    .detail-content{
+        @include flex-start;
+        gap: 32px;
+        margin-bottom: 32px;
+        .left-sec{
+            width: 492px;
+            margin-bottom: 24px;
+            margin-left: 0;
+            .title{
+                width: 372px;
+                padding: 24px 24px;
+                margin-bottom: 16px;
+                letter-spacing: -2px;
+                margin: 0 0 16px 0px;
+            }
+            .text{
+                width: 305px;
+                padding: 26px 24px 0;
+                margin: 0;
+            }
+            .car-image{
+                width: 360px;
+                height: 120px;
+                margin: 32px 0px 0px 24px;
+            }
+        }
+        .img-group{
+            @include flex-start;
+            gap: 24px;
+            div:hover{
+                scale: 1.05;
+            }
+            .img{
+                width: 148px;
+                height: 124px;
+                border-radius: 8px;
+                background-size: cover;
+            }
+            .ring{
+                outline: 2px solid $primary-color;
+                outline-offset: 5px;
+                background-image: url("../images/car/wave1.png");
+            }
+            .content{
+                @include flex-start;
+                height: inherit;
+                .car-img {
+                    width: 116px;
+                    height: 36px;
+                    margin: 0 auto;
+                }
+            }
+            .dashboard{
+                background-image: url("../images/car/side.png");
+            }
+            .chairs{
+                background-image: url("../images/car/front.png");
+            }
+        }
+        .detail{
+            background-color: $white-color;
+            width: 492px;
+            height: 508px;
+            border-radius: 10px;
+            padding: 24px;
+            .detail-head{
+                @include flex-space-between;
+                svg:hover{
+                    opacity: 0.7;
+                }
+                .detail-name{
+                    font-size: 30px;
+                    font-weight: 700;
+                    color: $head-color;
+                    letter-spacing: -2px;
+                    margin-bottom: 10px;
+                }
+            }
+            .score{
+                @include flex-start;
+                margin-bottom: 34px;
+                svg:hover{
+                    cursor: pointer;
+                    opacity: 0.7;
+                }
+                .votes{
+                    margin-left:5px;
+                    font-size: 14px;
+                    color: $icon-color;
+                }
+            }
+            .detail-text{
+                width: 444px;
+                line-height: 40px;
+                font-size: 19px;
+                font-weight: 400;
+                color: $icon-color;
+                margin-bottom: 32px;
+            }
+            .detail-tag{
+                @include flex-space-between;
+                margin-bottom: 16px;
+                .tag{
+                    display: inline-block;
+                    height: 28px;
+                    width: 92px;
+                    font-size: 20px;
+                }
+            }
+            .mb-9 {
+                margin-bottom: 60px
+            }
+            .detail-footer{
+                @include flex-space-between;
+                margin-bottom: 32px;
+                .detail-btn{
+                    @include button($primary-color,56px,140px);
+                    border-radius: 4px;
+                    &:hover{
+                        cursor: pointer;
+                        opacity: 0.9;
+                    }
+                }
+                .box{
+                    margin-bottom: -5px;
+                }
+                .price{
+                    font-size: 28px;
+                    color: $head-color;
+                    font-weight: 700;
+                }
+                .amount{
+                    color: $secondary-bg-color;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    .comment-content{
+        background-color: $white-color;
+        height: 452px;
+        width: 1016px;
+        border-radius: 10px;
+        margin-bottom: 42px;
+        padding: 24px;
+        .summery-content{
+            @include flex-start;
+            margin-bottom: 32px;
+            .summery{
+                font-size: 20px;
+                color: $head-color;
+                margin-right: 12px;
+            }
+            .summery-num{
+                height: 28px;
+                width: 44px;
+                text-align: center;
+                background-color: $primary-color;
+                color: $white-color;
+                @include flex-start;
+                justify-content: center;
+                border-radius: 4px;
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+        .head-comment{
+            @include flex-space-between;
+            .profile{
+                @include flex-start;
+                img{
+                    height: 55px;
+                    width: 55px;
+                    border-radius: 50%;
+                    margin-right: 16px;
+                }
+                div{
+                    span{
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: $head-color;
+                        margin-bottom: 8px;
+                    }
+                    p{
+                        margin: 0;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: $secondary-bg-color;
+                    }
+                }
+            }
+            .score-sec{
+                text-align: end;
+                span{
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: $secondary-bg-color;
+                    display: inline-block;
+                    margin-bottom: 8px;
+                }
+                div{
+                    svg:hover{
+                        cursor: pointer;
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+        .body-comment{
+            width: 896px;
+            min-height: 56px;
+            margin-left: 70px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: $icon-color;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        .mb-5{
+            margin-bottom: 24px;
+        }
+        .expand-comment{
+            @include flex-center;
+            color: $secondary-bg-color;
+            div{
+                &:hover{
+                    cursor: pointer;
+                    color: $icon-color;
+                }
+                span{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+}

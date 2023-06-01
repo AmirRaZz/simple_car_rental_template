@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rent | Detail</title>
+    <link rel="shortcut icon" href="images/favicon/sedan.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="node_modules/star-rating.js/dist/star-rating.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="left-head">
+                <div class="logo">MORENT</div>
+                <div class="search-box">
+                    <form class="search-form">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="icons search-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                        <input class="input" type="search" placeholder="Search something here">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="icons filter-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                        </svg>
+                    </form>
+                </div>
+            </div>
+
+            <div class="right-head">
+                <div class="rounded-full" onclick="choose(this)">
+                    <div class="c"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icons">
+                        <path
+                            d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                    </svg>
+                </div>
+                <div class="rounded-full" onclick="choose(this)">
+                    <div class="c dot"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icons">
+                        <path fill-rule="evenodd"
+                            d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="rounded-full" onclick="choose(this)">
+                    <div class="c"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icons">
+                        <path fill-rule="evenodd"
+                            d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 00-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 00-2.282.819l-.922 1.597a1.875 1.875 0 00.432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 000 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 00-.432 2.385l.922 1.597a1.875 1.875 0 002.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 002.28-.819l.923-1.597a1.875 1.875 0 00-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 000-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 00-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 00-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 00-1.85-1.567h-1.843zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="rounded-full">
+                    <img class="img" src="images/avatar/images.jpg" alt="person">
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="side-bar">
+            <span class="sec-type">TYPE</span>
+            <div>
+                <input class="check-label mb-6" checked type="checkbox">
+                <label class="side-color" for="">Sport</label>
+                <span class="num-side">(10)</span>
+            </div>
+            <div>
+                <input class="mb-6" checked type="checkbox">
+                <label class="side-color" for="">SUV</label>
+                <span class="num-side">(14)</span>
+            </div>
+            <div>
+                <input class="mb-6" type="checkbox">
+                <label class="side-color" for="">MPV</label>
+                <span class="num-side">(16)</span>
+            </div>
+            <div>
+                <input class="mb-6" type="checkbox">
+                <label class="side-color" for="">Sedan</label>
+                <span class="num-side">(20)</span>
+            </div>
+            <div>
+                <input class="mb-6" type="checkbox">
+                <label class="side-color" for="">Coupe</label>
+                <span class="num-side">(14)</span>
+            </div>
+            <div>
+                <input class="mb-6 mb-8" type="checkbox">
+                <label class="side-color" for="">Hatchback</label>
+                <span class="num-side">(14)</span>
+            </div>
+
+            <span class="sec-type">CAPACITY</span>
+            <div>
+                <input class="check-label mb-6" checked type="checkbox">
+                <label class="side-color" for="">2 Person</label>
+                <span class="num-side">(10)</span>
+            </div>
+            <div>
+                <input class="mb-6" type="checkbox">
+                <label class="side-color" for="">4 Person</label>
+                <span class="num-side">(14)</span>
+            </div>
+            <div>
+                <input class="mb-6" type="checkbox">
+                <label class="side-color" for="">6 Person</label>
+                <span class="num-side">(12)</span>
+            </div>
+            <div>
+                <input class="mb-6 mb-8" checked type="checkbox">
+                <label class="side-color" for="">8 or More</label>
+                <span class="num-side">(16)</span>
+            </div>
+
+            <span class="sec-type">PRICE</span>
+            <div>
+                <input class="check-label w-8" id="price-bar" type="range" step="5" value="80" max="100"
+                    oninput="change(this.value)"></input>
+            </div>
+            <output id="price-text" class="mt-2 side-color">Max. $100.00</output>
+
+        </div>
+
+        <div class="container-fluid">
+            <div class="detail-content">
+                <div>
+                    <div class="left-sec">
+                        <h2 class="title">Sports car with the best design and acceleration</h2>
+                        <p class="text">Safety and comfort while driving a
+                            futuristic and elegant sports car</p>
+                        <div class="car-image"></div>
+                    </div>
+                    <div class="img-group">
+                        <div class="img ring">
+                            <div class="content">
+                                <img src="images/car/car-wallpaper.png" class="car-img"></img>
+                            </div>
+                        </div>
+                        <div class="img dashboard"></div>
+                        <div class="img chairs"></div>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="detail-head">
+                        <span class="detail-name">Nissan GT - R</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red"
+                            class="icons heart-color">
+                            <path
+                                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                        </svg>
+                    </div>
+                    <div class="score">
+                        <select class="star-rating">
+                            <option value="">Select a rating</option>
+                            <option value="5">Excellent</option>
+                            <option value="4">Very Good</option>
+                            <option value="3">Average</option>
+                            <option value="2">Poor</option>
+                            <option value="1">Terrible</option>
+                        </select>
+                        <span class="votes">440+ Reviewer</span>
+                    </div>
+                    <p class="detail-text">NISMO has become the embodiment of Nissan's outstanding performance, inspired
+                        by the most unforgiving proving ground,
+                        the "race track".</p>
+                    <div class="detail-tag">
+                        <span class="tag light-font">Type Car</span>
+                        <span class="tag bg-text-700 mr-6 text-end">Sport</span>
+                        <span class="tag light-font">Capacity</span>
+                        <span class="tag bg-text-700 text-end">2 Person</span>
+                    </div>
+                    <div class="detail-tag mb-9">
+                        <span class="tag light-font">Steering</span>
+                        <span class="tag mr-6 bg-text-700 text-end">Manual</span>
+                        <span class="tag light-font">Gasoline</span>
+                        <span class="tag bg-text-700 text-end">70L</span>
+                    </div>
+                    <div class="detail-footer">
+                        <div>
+                            <div class="box">
+                                <span class="price">$80.00/</span>
+                                <span class="amount"> days</span>
+                            </div>
+                            <del class="amount">$100.00</del>
+                        </div>
+                        <button class="detail-btn">Rent Now</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="comment-content">
+                <div class="summery-content">
+                    <span class="summery">Reviews</span>
+                    <span class="summery-num">13</span>
+                </div>
+                <div class="head-comment">
+                    <div class="profile">
+                        <img src="images/avatar/images.jpg" alt="profile">
+                        <div>
+                            <span>Alex Stanton</span>
+                            <p>CEO at Bukalapak</p>
+                        </div>
+                    </div>
+                    <div class="score-sec">
+                        <span>21 July 2022</span>
+                        <div class="score">
+                            <select class="star-rating">
+                                <option value="">Select a rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Very Good</option>
+                                <option value="3">Average</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Terrible</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-comment">
+                    We are very happy with the service from the MORENT App. Morent has a low price and also a large
+                    variety of cars with
+                    good and comfortable facilities. In addition, the service provided by the officers is also very
+                    friendly and very
+                    polite.
+                </div>
+                <div class="head-comment">
+                    <div class="profile">
+                        <img src="images/avatar/avatar6.png" alt="profile">
+                        <div>
+                            <span>Skylar Dias</span>
+                            <p>CEO at Amazon</p>
+                        </div>
+                    </div>
+                    <div class="score-sec">
+                        <span>20 July 2022</span>
+                        <div class="score">
+                            <select class="star-rating">
+                                <option value="">Select a rating</option>
+                                <option value="5">Excellent</option>
+                                <option value="4">Very Good</option>
+                                <option value="3">Average</option>
+                                <option value="2">Poor</option>
+                                <option value="1">Terrible</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-comment mb-5">
+                    We are greatly helped by the services of the MORENT Application. Morent has low prices and also a
+                    wide variety of cars
+                    with good and comfortable facilities. In addition, the service provided by the officers is also very
+                    friendly and very
+                    polite.
+                </div>
+                <div class="expand-comment mb-5">
+                    <div>
+                        <span>Show All</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="populate-cars">
+                <h4 class="pop-head"> Recent Car</h4>
+                <a class="pop-link" href="#">View All</a>
+            </div>
+
+            <div class="pop-grid">
+                <div class="cars">
+                    <div class="cart-head">
+                        <span class="cart-title">Koenigsegg</span>
+                        <span onclick="like(this)">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icons heart-color">
+                                            <path
+                                                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                        </svg> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="icons heart heart-color">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <span class="des-cart">Sport</span>
+                    <div class="img-car">
+                        <div class="shadow"></div>
+                    </div>
+
+                    <div class="info-cart">
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" fill="none">
+                                    <path fill="#90A3BF"
+                                        d="m21.34 7.33-2-1c-.37-.18-.83-.04-1.01.33-.19.38-.04.83.33 1.01l1.59.79v4.79l-3.75.01V3c0-2-1.34-3-3-3h-8c-1.66 0-3 1-3 3v16.25H1c-.41 0-.75.34-.75.75s.34.75.75.75h17c.41 0 .75-.34.75-.75s-.34-.75-.75-.75h-1.5v-4.49l4.5-.01c.42 0 .75-.34.75-.75V8a.76.76 0 0 0-.41-.67ZM5 4.89C5 3.5 5.85 3 6.89 3h5.23C13.15 3 14 3.5 14 4.89v1.23C14 7.5 13.15 8 12.11 8H6.89C5.85 8 5 7.5 5 6.11V4.89Zm.5 5.36h3c.41 0 .75.34.75.75s-.34.75-.75.75h-3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75Z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">90L</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">Manual</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">2 People</span>
+                        </div>
+                    </div>
+                    <div class="footer-card">
+                        <div>
+                            <span class="price">$99.00/ </span>
+                            <span class="time">day</span>
+                        </div>
+                        <button class="order-btn">Rent Now</button>
+                    </div>
+                </div>
+                <div class="cars">
+                    <div class="cart-head">
+                        <span class="cart-title">Koenigsegg</span>
+                        <span onclick="like(this)">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icons heart-color">
+                                            <path
+                                                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                        </svg> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="icons heart heart-color">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <span class="des-cart">Sport</span>
+                    <div class="img-car">
+                        <div class="shadow"></div>
+                    </div>
+
+                    <div class="info-cart">
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" fill="none">
+                                    <path fill="#90A3BF"
+                                        d="m21.34 7.33-2-1c-.37-.18-.83-.04-1.01.33-.19.38-.04.83.33 1.01l1.59.79v4.79l-3.75.01V3c0-2-1.34-3-3-3h-8c-1.66 0-3 1-3 3v16.25H1c-.41 0-.75.34-.75.75s.34.75.75.75h17c.41 0 .75-.34.75-.75s-.34-.75-.75-.75h-1.5v-4.49l4.5-.01c.42 0 .75-.34.75-.75V8a.76.76 0 0 0-.41-.67ZM5 4.89C5 3.5 5.85 3 6.89 3h5.23C13.15 3 14 3.5 14 4.89v1.23C14 7.5 13.15 8 12.11 8H6.89C5.85 8 5 7.5 5 6.11V4.89Zm.5 5.36h3c.41 0 .75.34.75.75s-.34.75-.75.75h-3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75Z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">90L</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">Manual</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">2 People</span>
+                        </div>
+                    </div>
+                    <div class="footer-card">
+                        <div>
+                            <span class="price">$99.00/ </span>
+                            <span class="time">day</span>
+                        </div>
+                        <button class="order-btn">Rent Now</button>
+                    </div>
+                </div>
+                <div class="cars">
+                    <div class="cart-head">
+                        <span class="cart-title">Koenigsegg</span>
+                        <span onclick="like(this)">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icons heart-color">
+                                            <path
+                                                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                        </svg> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="icons heart heart-color">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <span class="des-cart">Sport</span>
+                    <div class="img-car">
+                        <div class="shadow"></div>
+                    </div>
+
+                    <div class="info-cart">
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" fill="none">
+                                    <path fill="#90A3BF"
+                                        d="m21.34 7.33-2-1c-.37-.18-.83-.04-1.01.33-.19.38-.04.83.33 1.01l1.59.79v4.79l-3.75.01V3c0-2-1.34-3-3-3h-8c-1.66 0-3 1-3 3v16.25H1c-.41 0-.75.34-.75.75s.34.75.75.75h17c.41 0 .75-.34.75-.75s-.34-.75-.75-.75h-1.5v-4.49l4.5-.01c.42 0 .75-.34.75-.75V8a.76.76 0 0 0-.41-.67ZM5 4.89C5 3.5 5.85 3 6.89 3h5.23C13.15 3 14 3.5 14 4.89v1.23C14 7.5 13.15 8 12.11 8H6.89C5.85 8 5 7.5 5 6.11V4.89Zm.5 5.36h3c.41 0 .75.34.75.75s-.34.75-.75.75h-3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75Z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">90L</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">Manual</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">2 People</span>
+                        </div>
+                    </div>
+                    <div class="footer-card">
+                        <div>
+                            <span class="price">$99.00/ </span>
+                            <span class="time">day</span>
+                        </div>
+                        <button class="order-btn">Rent Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="populate-cars">
+                <h4 class="pop-head"> Recommendation Car</h4>
+                <a class="pop-link" href="#">View All</a>
+            </div>
+
+            <div class="pop-grid">
+                <div class="cars">
+                    <div class="cart-head">
+                        <span class="cart-title">Koenigsegg</span>
+                        <span onclick="like(this)">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icons heart-color">
+                                                            <path
+                                                                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                                        </svg> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="icons heart heart-color">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <span class="des-cart">Sport</span>
+                    <div class="img-car">
+                        <div class="shadow"></div>
+                    </div>
+
+                    <div class="info-cart">
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" fill="none">
+                                    <path fill="#90A3BF"
+                                        d="m21.34 7.33-2-1c-.37-.18-.83-.04-1.01.33-.19.38-.04.83.33 1.01l1.59.79v4.79l-3.75.01V3c0-2-1.34-3-3-3h-8c-1.66 0-3 1-3 3v16.25H1c-.41 0-.75.34-.75.75s.34.75.75.75h17c.41 0 .75-.34.75-.75s-.34-.75-.75-.75h-1.5v-4.49l4.5-.01c.42 0 .75-.34.75-.75V8a.76.76 0 0 0-.41-.67ZM5 4.89C5 3.5 5.85 3 6.89 3h5.23C13.15 3 14 3.5 14 4.89v1.23C14 7.5 13.15 8 12.11 8H6.89C5.85 8 5 7.5 5 6.11V4.89Zm.5 5.36h3c.41 0 .75.34.75.75s-.34.75-.75.75h-3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75Z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">90L</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">Manual</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">2 People</span>
+                        </div>
+                    </div>
+                    <div class="footer-card">
+                        <div>
+                            <span class="price">$99.00/ </span>
+                            <span class="time">day</span>
+                        </div>
+                        <button class="order-btn">Rent Now</button>
+                    </div>
+                </div>
+                <div class="cars">
+                    <div class="cart-head">
+                        <span class="cart-title">Koenigsegg</span>
+                        <span onclick="like(this)">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icons heart-color">
+                                                            <path
+                                                                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                                        </svg> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="icons heart heart-color">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <span class="des-cart">Sport</span>
+                    <div class="img-car">
+                        <div class="shadow"></div>
+                    </div>
+
+                    <div class="info-cart">
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" fill="none">
+                                    <path fill="#90A3BF"
+                                        d="m21.34 7.33-2-1c-.37-.18-.83-.04-1.01.33-.19.38-.04.83.33 1.01l1.59.79v4.79l-3.75.01V3c0-2-1.34-3-3-3h-8c-1.66 0-3 1-3 3v16.25H1c-.41 0-.75.34-.75.75s.34.75.75.75h17c.41 0 .75-.34.75-.75s-.34-.75-.75-.75h-1.5v-4.49l4.5-.01c.42 0 .75-.34.75-.75V8a.76.76 0 0 0-.41-.67ZM5 4.89C5 3.5 5.85 3 6.89 3h5.23C13.15 3 14 3.5 14 4.89v1.23C14 7.5 13.15 8 12.11 8H6.89C5.85 8 5 7.5 5 6.11V4.89Zm.5 5.36h3c.41 0 .75.34.75.75s-.34.75-.75.75h-3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75Z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">90L</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">Manual</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">2 People</span>
+                        </div>
+                    </div>
+                    <div class="footer-card">
+                        <div>
+                            <span class="price">$99.00/ </span>
+                            <span class="time">day</span>
+                        </div>
+                        <button class="order-btn">Rent Now</button>
+                    </div>
+                </div>
+                <div class="cars">
+                    <div class="cart-head">
+                        <span class="cart-title">Koenigsegg</span>
+                        <span onclick="like(this)">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icons heart-color">
+                                                            <path
+                                                                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                                        </svg> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="icons heart heart-color">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <span class="des-cart">Sport</span>
+                    <div class="img-car">
+                        <div class="shadow"></div>
+                    </div>
+
+                    <div class="info-cart">
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" fill="none">
+                                    <path fill="#90A3BF"
+                                        d="m21.34 7.33-2-1c-.37-.18-.83-.04-1.01.33-.19.38-.04.83.33 1.01l1.59.79v4.79l-3.75.01V3c0-2-1.34-3-3-3h-8c-1.66 0-3 1-3 3v16.25H1c-.41 0-.75.34-.75.75s.34.75.75.75h17c.41 0 .75-.34.75-.75s-.34-.75-.75-.75h-1.5v-4.49l4.5-.01c.42 0 .75-.34.75-.75V8a.76.76 0 0 0-.41-.67ZM5 4.89C5 3.5 5.85 3 6.89 3h5.23C13.15 3 14 3.5 14 4.89v1.23C14 7.5 13.15 8 12.11 8H6.89C5.85 8 5 7.5 5 6.11V4.89Zm.5 5.36h3c.41 0 .75.34.75.75s-.34.75-.75.75h-3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75Z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">90L</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 9.563C9 9.252 9.252 9 9.563 9h4.874c.311 0 .563.252.563.563v4.874c0 .311-.252.563-.563.563H9.564A.562.562 0 019 14.437V9.564z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">Manual</span>
+                        </div>
+
+                        <div class="flex-icon">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="icons-cart">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                            </span>
+                            <span class="icon-des">2 People</span>
+                        </div>
+                    </div>
+                    <div class="footer-card">
+                        <div>
+                            <span class="price">$99.00/ </span>
+                            <span class="time">day</span>
+                        </div>
+                        <button class="order-btn">Rent Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="foot">
+            <div class="left-foot">
+                <h1 class="foot-head">MORENT</h1>
+                <p class="foot-des">Our vision is to provide convenience and help increase your sales business.</p>
+            </div>
+
+            <div class="right-foot">
+                <div class="group">
+                    <h3 class="head-group">About</h3>
+                    <p>How it works</p>
+                    <p>Featured</p>
+                    <p>Partnership</p>
+                    <p>Bussiness Relation</p>
+                </div>
+                <div class="group">
+                    <h3 class="head-group">Community</h3>
+                    <p>Events</p>
+                    <p>Blog</p>
+                    <p>Podcast</p>
+                    <p>Invite a friend</p>
+                </div>
+                <div class="group">
+                    <h3 class="head-group">Socials</h3>
+                    <p>Discord</p>
+                    <p>Instagram</p>
+                    <p>Twitter</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <h3 class="sign">©2022 MORENT. All rights reserved</h3>
+            <div class="rules">
+                <p>Privacy & Policy</p>
+                <p>Terms & Condition</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script1.js"></script>
+    <script src="js/script2.js"></script>
+    <script src="node_modules/star-rating.js/dist/star-rating.min.js"></script>
+    <script>
+        var starRatingControl = new StarRating('.star-rating',{
+            showText: false,
+            tooltip: false,
+            clearable: false,
+        });
+    </script>
+</body>
+
+</html>
